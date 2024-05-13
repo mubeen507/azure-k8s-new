@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mubeenazureksnew 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mubeenazureksnew
+  template:
+    metadata:
+      labels:
+        app: mubeenazureksnew 
+    spec:
+      containers:
+        - name: mubeenazureksnew 
+          image: myfirstacr777.azurecr.io/mubeenazureksnew
+          ports:
+          - containerPort: 80
