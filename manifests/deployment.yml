@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: nignxapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nignxapp
+  template:
+    metadata:
+      labels:
+        app: nignxapp 
+    spec:
+      containers:
+        - name: nignxapp 
+          image: nginxappacr.azurecr.io/nignxapp
+          ports:
+          - containerPort: 80
